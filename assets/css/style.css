@@ -1,0 +1,29 @@
+body {
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+p {
+    font-size: 25px;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+/* Intro Styling */
+
+.intro {
+    position: absolute;
+    top: 30%;
+    width: 100%;
+    text-align: center;
+}
+
+.intro button {
+    width: 12%;
+    padding: 10px;
+    font-size: 26px;
+    border-radius: 10px;
+    background-color: #4d194d;
+    color: whitesmoke;
+}
