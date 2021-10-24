@@ -42,7 +42,7 @@ button {
     
 }
 
-#high_score {
+#view_score {
     text-align: left;
     display: inline;
     font-size: 20px;
@@ -50,7 +50,8 @@ button {
 }
 
 
-.answer {
+.quiz-container button {
     display: flex;
+    justify-content: center;
 
 }
