@@ -25,25 +25,27 @@
 
        <!--Quiz Questions-->
        <section class="quiz-container">
-            <div class="question-1" style="display:none">
+            <div class="question-1" style="display:none" data-id="0">
                     <h2>What color is the sky?</h2>
                     <div>
-                        <button id="answer-1" class="wrong">Orange</button>
-                        <button id="answer-1" class="correct" data-number="1">green</button>
-                        <button id="answer-1" class="wrong" data-number="2">purple</button>
-                        <button id="answer-1" class="wrong" data-number="3">Yellow</button>
-                        <button id="answer-1" class="wrong" data-number="4">Blue</button>
+                        <button id="answer-btn" onclick="questionTwo()" data-id="0">Orange</button>
+                        <button id="answer-btn" onclick="questionTwo()" data-id="1">green</button>
+                        <button id="answer-btn" onclick="questionTwo()" data-id="0">purple</button>
+                        <button id="answer-btn" onclick="questionTwo()" data-id="0">Yellow</button>
+                        <button id="answer-btn" onclick="questionTwo()" data-id="0">Blue</button>
+
                     </div>
+                        
             </div>
 
             <div class="question-2" style="display:none">
                     <h2>Question Two</h2>
-                    <div>
-                        <button id="answer-2">answer 1</button>
-                        <button id="answer-2">answer 2</button>
-                        <button id="answer-2">answer 3</button>
-                        <button id="answer-2">answer 4</button>
-                        <button id="answer-2">answer 5</button>
+                    
+                        <button id="answer-btn" onclick="questionThree()" data-id="0">answer 1</button>
+                        <button id="answer-btn" onclick="questionThree()" data-id="0">answer 2</button>
+                        <button id="answer-btn" onclick="questionThree()" data-id="1">answer 3</button>
+                        <button id="answer-btn" onclick="questionThree()" data-id="0">answer 4</button>
+                        <button id="answer-btn" onclick="questionThree()" data-id="0">answer 5</button>
                     </div>
                     
             </div>
@@ -51,11 +53,11 @@
             <div class="question-3" style="display:none">
                     <h2>Question Three</h2>
                     <div>
-                        <button id="answer-3">answer 1</button>
-                        <button id="answer-3">answer 2</button>
-                        <button id="answer-3">answer 3</button>
-                        <button id="answer-3">answer 4</button>
-                        <button id="answer-3">answer 5</button>
+                        <button id="answer-btn" onclick="questionFour()" data-id="0">answer 1</button>
+                        <button id="answer-btn" onclick="questionFour()" data-id="1">answer 2</button>
+                        <button id="answer-btn" onclick="questionFour()" data-id="0">answer 3</button>
+                        <button id="answer-btn" onclick="questionFour()" data-id="0">answer 4</button>
+                        <button id="answer-btn" onclick="questionFour()" data-id="0">answer 5</button>
                     </div>
                     
             </div>
@@ -63,25 +65,38 @@
             <div class="question-4" style="display:none">
                     <h2>Question Four</h2>
                     <div>
-                        <button id="answer-4">answer 1</button>
-                        <button id="answer-4">answer 2</button>
-                        <button id="answer-4">answer 3</button>
-                        <button id="answer-4">answer 4</button>
-                        <button id="answer-4">answer 5</button>
+                        <button id="answer-btn" onclick="questionFive()" data-id="0">answer 1</button>
+                        <button id="answer-btn" onclick="questionFive()" data-id="1">answer 2</button>
+                        <button id="answer-btn" onclick="questionFive()" data-id="0">answer 3</button>
+                        <button id="answer-btn" onclick="questionFive()" data-id="0">answer 4</button>
+                        <button id="answer-btn" onclick="questionFive()" data-id="0">answer 5</button>
                     </div>
             </div>
 
             <div class="question-5" style="display:none">
                     <h2>Question Five</h2>
                     <div>
-                        <button id="answer-5">answer 1</button>
-                        <button id="answer-5">answer 2</button>
-                        <button id="answer-5">answer 3</button>
-                        <button id="answer-5">answer 4</button>
-                        <button id="answer-5">answer 5</button>
+                        <button id="answer-btn" onclick="gameOver()" data-id="0">answer 1</button>
+                        <button id="answer-btn" onclick="gameOver()" data-id="0">answer 2</button>
+                        <button id="answer-btn" onclick="gameOver()" data-id="1">answer 3</button>
+                        <button id="answer-btn" onclick="gameOver()" data-id="0">answer 4</button>
+                        <button id="answer-btn" onclick="gameOver()" data-id="0">answer 5</button>
                     </div>
             </div>
         </section>
+
+        <!--End game-->
+        
+            <div class="endgame"style="display:none">       
+                    <h1>Coding Quiz Challenge</h1>
+                    <p>GAME OVER!</p>
+                    <div class="score_box">
+                        <input type="text" name="">
+                        <button id="savescore">Save Score</button>
+                    </div>
+                    <button id="end-btn" onclick="questionOne()">Play Again?</button>
+                </section>
+            </div>
        
     
     

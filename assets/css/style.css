@@ -14,7 +14,7 @@ h2 {
     font-size: 30px;
 }
 
-.intro-container, .quiz-container {
+.intro-container, .quiz-container, .endgame {
     position: absolute;
     top: 30%;
     width: 100%;
@@ -54,4 +54,29 @@ button {
     display: flex;
     justify-content: center;
 
+}
+
+#end-btn {
+    width: 12%;
+    padding: 10px;
+    font-size: 26px;
+    border-radius: 10px;
+    background-color: #4d194d;
+    color: whitesmoke;
+}
+
+#savescore {
+    width: 9%;
+    padding: 5px;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: #4d194d;
+    color: whitesmoke;
+}
+
+.score_box {
+    padding: 25px;
+    top: 30%;
+    width: 100%;
+    text-align: center;
 }

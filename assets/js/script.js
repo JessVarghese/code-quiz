@@ -1,29 +1,30 @@
 var startButton = document.getElementById("start-btn");
 var countDown = document.getElementById("timer");
-var qTwo = document.getElementById("answer-1");
-var qThree = document.getElementById("answer-2");
-var qFour = document.getElementById("answer-3");
-var qFive = document.getElementById("answer-4");
-
-var wrong = document.getElementsByClassName("wrong");
-var correct = document.getElementsByClassName("correct");
+// var qTwo = document.getElementById("answer-1");
+// var qThree = document.getElementById("answer-2");
+// var qFour = document.getElementById("answer-3");
+// var qFive = document.getElementById("answer-4");
+var results = document.getElementById("endgame")
 
 
 
+var dataId = document.querySelectorAll("button[data-id]");
+// var answerBtn = document.querySelectorAll("answer-btn");
+
+var endGame = document.getElementsByClassName("endgame");
 
 startButton.addEventListener("click", startTimer);
 startButton.addEventListener("click", questionOne);
-qTwo.addEventListener("click", questionTwo);
-qThree.addEventListener("click", questionThree);
-qFour.addEventListener("click", questionFour);
-qFive.addEventListener("click", questionFive);
+
 
 
 
 
 
 //Function for when the user clicks the button to start the quiz
-let time =90;
+
+
+let time =75;
 let timerMinutes = time * 60;
 let timer = timerMinutes /60;
 
@@ -31,39 +32,34 @@ function startTimer() {
   startButton
   let timer = setInterval(() => {
     countDown.innerHTML = "Timer: " + time;
-    // time--;
-    if (time<= -1) {
+    time--;
+    if (time<= -0) {
       clearInterval(timer);
   }
     
-  }, 90)
+  }, 750)
 
   
 };
+
+
+var wrong = timer -10;
+var correct = timer +5;
 
 function questionOne() {
-  document.querySelector(".question-1").style.display="block"
-  // console.log("This is the DOM query selector value " + JSON.stringify(questionOne))
-  
-  document.querySelector(".intro-container").style.display="none"
+    document.querySelector(".question-1").style.display="block"
+    document.querySelector(".intro-container").style.display="none"
+    document.querySelector(".endgame").style.display="none"
 
-  if (wrong) {
-    return (timer - 10);
-  }
-
-  if (qTwo===correct) {
-    return (timer + 5);
-  }
-
-};
-    
+  }; 
 
 
 function questionTwo() {
   
   document.querySelector(".question-2").style.display="block"
   document.querySelector(".question-1").style.display="none"
-};
+
+  };
 
 
 
@@ -88,11 +84,15 @@ function questionFive() {
   document.querySelector(".question-5").style.display="block"
   document.querySelector(".question-4").style.display="none"
 
+
 };
 
-// function endGame() {
+function gameOver() {
+  document.querySelector(".endgame").style.display="block"
+  document.querySelector(".question-5").style.display="none"
+  
+}
 
-// }
 
 
 
