@@ -9,7 +9,7 @@ var results = document.getElementById("endgame")
 
 
 var dataId = document.querySelectorAll("button[data-id]");
-// var answerBtn = document.querySelectorAll("answer-btn");
+var answerBtn = document.querySelectorAll("answer-btn");
 
 var endGame = document.getElementsByClassName("endgame");
 
@@ -18,13 +18,10 @@ startButton.addEventListener("click", questionOne);
 
 
 
-
-
-
 //Function for when the user clicks the button to start the quiz
 
 
-let time =75;
+let time =60;
 let timerMinutes = time * 60;
 let timer = timerMinutes /60;
 
@@ -33,7 +30,7 @@ function startTimer() {
   let timer = setInterval(() => {
     countDown.innerHTML = "Timer: " + time;
     time--;
-    if (time<= -0) {
+    if (time<= 0) {
       clearInterval(timer);
   }
     
@@ -43,13 +40,13 @@ function startTimer() {
 };
 
 
-var wrong = timer -10;
-var correct = timer +5;
 
 function questionOne() {
     document.querySelector(".question-1").style.display="block"
     document.querySelector(".intro-container").style.display="none"
     document.querySelector(".endgame").style.display="none"
+
+  
 
   }; 
 
@@ -90,8 +87,20 @@ function questionFive() {
 function gameOver() {
   document.querySelector(".endgame").style.display="block"
   document.querySelector(".question-5").style.display="none"
+
+  let scores = [];
+  const addScore = (ev)=>{
+    event.preventDefault();
+    let score = {
+      id: time(),
+      name: document.getElementById("").value,
+    }
+    scores.push(score);
+    document.forms[0].reset();
+  }
   
-}
+};
+
 
 
 
