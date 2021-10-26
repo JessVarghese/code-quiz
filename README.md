@@ -31,7 +31,6 @@ gh repo clone JessVarghese/code-quiz.
 
 ![visuals](https://github.com/JessVarghese/code-quiz/blob/main/assets/images/code_quiz_image.png)
 
-![visuals]()
 
 
 ## License
