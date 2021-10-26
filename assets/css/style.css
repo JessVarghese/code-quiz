@@ -23,9 +23,9 @@ h2 {
 }
 
 button {
-    width: 12%;
+    width: 15%;
     padding: 10px;
-    font-size: 26px;
+    font-size: 20px;
     border-radius: 10px;
     background-color: #4d194d;
     color: whitesmoke;
@@ -55,6 +55,7 @@ button {
     justify-content: center;
 
 }
+
 
 #end-btn {
     width: 12%;

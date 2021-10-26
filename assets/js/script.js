@@ -30,12 +30,11 @@ function startTimer() {
   let timer = setInterval(() => {
     countDown.innerHTML = "Timer: " + time;
     time--;
-    if (time<= 0) {
+    if (time<= -1) {
       clearInterval(timer);
   }
     
-  }, 750)
-
+  }, 600)
   
 };
 
@@ -88,21 +87,13 @@ function gameOver() {
   document.querySelector(".endgame").style.display="block"
   document.querySelector(".question-5").style.display="none"
 
-  let scores = [];
-  const addScore = (ev)=>{
-    event.preventDefault();
-    let score = {
-      id: time(),
-      name: document.getElementById("").value,
-    }
-    scores.push(score);
-    document.forms[0].reset();
-  }
+  
+
   
 };
 
 
-
+;
 
 
 

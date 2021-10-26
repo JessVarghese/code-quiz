@@ -26,61 +26,55 @@
        <!--Quiz Questions-->
        <section class="quiz-container">
             <div class="question-1" style="display:none" data-id="0">
-                    <h2>What color is the sky?</h2>
-                    <div>
-                        <button id="answer-btn" onclick="questionTwo()" data-id="0">Orange</button>
-                        <button id="answer-btn" onclick="questionTwo()" data-id="1">green</button>
-                        <button id="answer-btn" onclick="questionTwo()" data-id="0">purple</button>
-                        <button id="answer-btn" onclick="questionTwo()" data-id="0">Yellow</button>
-                        <button id="answer-btn" onclick="questionTwo()" data-id="0">Blue</button>
-
+                    <h2>How can you get the type of arguments passed to a function?</h2>
+                    <div class="answer_container">
+                        <button id="answer-btn" onclick="questionTwo()" data-id="1">Using typeof operator</button>
+                        <button id="answer-btn" onclick="questionTwo()" data-id="0">Using getType function</button>
+                        <button id="answer-btn" onclick="questionTwo()" data-id="0">Both of the above</button>
+                        <button id="answer-btn" onclick="questionTwo()" data-id="0">None of the above</button>
                     </div>
                         
             </div>
 
             <div class="question-2" style="display:none">
-                    <h2>Question Two</h2>
-                    
-                        <button id="answer-btn" onclick="questionThree()" data-id="0">answer 1</button>
-                        <button id="answer-btn" onclick="questionThree()" data-id="0">answer 2</button>
-                        <button id="answer-btn" onclick="questionThree()" data-id="1">answer 3</button>
-                        <button id="answer-btn" onclick="questionThree()" data-id="0">answer 4</button>
-                        <button id="answer-btn" onclick="questionThree()" data-id="0">answer 5</button>
+                    <h2>Which of the following is correct about callbacks?</h2>
+                    <div>
+                        <button id="answer-btn" onclick="questionThree()" data-id="0">A callback is a plain JavaScript function passed to some method as an argument or option.</button>
+                        <button id="answer-btn" onclick="questionThree()" data-id="0">Some callbacks are just events, called to give the user a chance to react when a certain state is triggered.</button>
+                        <button id="answer-btn" onclick="questionThree()" data-id="1">Both of the above</button>
+                        <button id="answer-btn" onclick="questionThree()" data-id="0">None of the above</button>
                     </div>
                     
             </div>
             
             <div class="question-3" style="display:none">
-                    <h2>Question Three</h2>
+                    <h2>Which built-in method returns the calling string value converted to lower case?</h2>
                     <div>
-                        <button id="answer-btn" onclick="questionFour()" data-id="0">answer 1</button>
-                        <button id="answer-btn" onclick="questionFour()" data-id="1">answer 2</button>
-                        <button id="answer-btn" onclick="questionFour()" data-id="0">answer 3</button>
-                        <button id="answer-btn" onclick="questionFour()" data-id="0">answer 4</button>
-                        <button id="answer-btn" onclick="questionFour()" data-id="0">answer 5</button>
+                        <button id="answer-btn" onclick="questionFour()" data-id="1">toLowerCase()</button>
+                        <button id="answer-btn" onclick="questionFour()" data-id="0">toLower()</button>
+                        <button id="answer-btn" onclick="questionFour()" data-id="0">changeCase(case)</button>
+                        <button id="answer-btn" onclick="questionFour()" data-id="0">None of the above.</button>
                     </div>
                     
             </div>
 
             <div class="question-4" style="display:none">
-                    <h2>Question Four</h2>
+                    <h2>Which of the following function of String object combines the text of two strings and returns a new string?</h2>
                     <div>
-                        <button id="answer-btn" onclick="questionFive()" data-id="0">answer 1</button>
-                        <button id="answer-btn" onclick="questionFive()" data-id="1">answer 2</button>
-                        <button id="answer-btn" onclick="questionFive()" data-id="0">answer 3</button>
-                        <button id="answer-btn" onclick="questionFive()" data-id="0">answer 4</button>
-                        <button id="answer-btn" onclick="questionFive()" data-id="0">answer 5</button>
+                        <button id="answer-btn" onclick="questionFive()" data-id="0">add()</button>
+                        <button id="answer-btn" onclick="questionFive()" data-id="1">merge()</button>
+                        <button id="answer-btn" onclick="questionFive()" data-id="0">concat()</button>
+                        <button id="answer-btn" onclick="questionFive()" data-id="0">append()</button>
                     </div>
             </div>
 
             <div class="question-5" style="display:none">
-                    <h2>Question Five</h2>
+                    <h2>Which of the below is used in Java script to insert special characters?</h2>
                     <div>
-                        <button id="answer-btn" onclick="gameOver()" data-id="0">answer 1</button>
-                        <button id="answer-btn" onclick="gameOver()" data-id="0">answer 2</button>
-                        <button id="answer-btn" onclick="gameOver()" data-id="1">answer 3</button>
-                        <button id="answer-btn" onclick="gameOver()" data-id="0">answer 4</button>
-                        <button id="answer-btn" onclick="gameOver()" data-id="0">answer 5</button>
+                        <button id="answer-btn" onclick="gameOver()" data-id="1">&</button>
+                        <button id="answer-btn" onclick="gameOver()" data-id="0">\</button>
+                        <button id="answer-btn" onclick="gameOver()" data-id="0">-</button>
+                        <button id="answer-btn" onclick="gameOver()" data-id="0">%</button>
                     </div>
             </div>
         </section>
@@ -92,7 +86,7 @@
                     <p>GAME OVER!</p>
                     <div class="score_box">
                         <form>
-                        <input type="text" name="">
+                        <input id="score" type="text" name="">
                         <button id="savescore">Save Score</button>
                         </form>
                         
