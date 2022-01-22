@@ -35,18 +35,19 @@ function startTimer() {
   }
     
   }, 600)
-  
+
 };
 
-
+function SaveTime() {
+  localStorage.setItem("timer")
+}
 
 function questionOne() {
     document.querySelector(".question-1").style.display="block"
     document.querySelector(".intro-container").style.display="none"
     document.querySelector(".endgame").style.display="none"
-
+ 
   
-
   }; 
 
 
@@ -54,6 +55,16 @@ function questionTwo() {
   
   document.querySelector(".question-2").style.display="block"
   document.querySelector(".question-1").style.display="none"
+  
+  var element = document.getElementById("answer-btn");
+ var dataId = element.getAttribute('data-id');
+ console.log(dataId);
+
+  if (document.querySelector('.data-id') == 0) {
+    time -= 10;
+    console.log(time);
+   document.getElementById("data-id").innerHTML = "Timer: " + time;
+  }
 
   };
 
