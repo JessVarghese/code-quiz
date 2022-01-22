@@ -6,7 +6,7 @@ The purpose of this application is to challenge a user with a timed quiz based o
 
 Once the user hits start they will be prompted with a series of five questions as a timer decreases in seconds. If the user selects a correct answer, 5 seconds will be added to timer, otherwise incorrect answers will decrease their time by 10 seconds. The game is over once the timer has reached 0.
 
-Once the user is over they can save their score along with their initials to compare their progress with other users.
+Once the game is over they can save their score along with their initials to compare their progress with other users.
 
 
 [Deployed application](https://jessvarghese.github.io/code-quiz/).
@@ -31,7 +31,6 @@ gh repo clone JessVarghese/code-quiz.
 
 ![visuals](https://github.com/JessVarghese/code-quiz/blob/main/assets/images/code_quiz_image.png)
 
-![visuals]()
 
 
 ## License
