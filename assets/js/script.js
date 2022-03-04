@@ -1,3 +1,8 @@
+let intro = document.querySelectorAll('intro-container');
+
+let quizContainerEl = document.querySelectorAll('quiz-container');
+
+
 
 //Countdown
 var timerEl = document.getElementById("countdown");
@@ -10,7 +15,7 @@ btn.addEventListener("click", countdown);
 
 
 //Quiz questions array
-let quiz = [
+let quiz = 
   {
     question: "How can you get the type of arguments passed to a function?",
     choices: [
@@ -20,18 +25,8 @@ let quiz = [
       "None of the above",
     ],
     correctAnswer: 0,
-  },
-  {
-    question: "Which of the following is correct about callbacks?",
-    choices: [
-      "A callback is a plain JavaScript function passed to some method as an argument or option.",
-      "Some callbacks are just events, called to give the user a chance to react when a certain state is triggered.",
-      "Both of the above",
-      "None of the above",
-    ],
-    correctAnswer: 2,
-  },
-];
+  };
+
 
 
 
@@ -62,47 +57,39 @@ function countdown() {
 
 
 
-// function startGame() {
+function startGame() {
 
-// //Quiz Container
-// document.getElementsByClassName("quiz-container").style.display="block"
-
-
-// //intro container
-// document.getElementsByClassName('intro-container').style.display="none"
+}
 
 
-// }
-
-
-// function showQuestions(q) {
+function showQuestions(q) {
  
-// //Questions
-// let titleDiv = document.getElementById("title");
-
-// titleDiv.textContent = q.question;
-
-// //Answers
-// let choices = document.querySelectorAll(".choices");
-// console.log(choices);
-
-// choices.forEach(function(element, index){
-//   element.textContent= q.choices[index];
+//Questions
+let titleDiv = document.getElementById("title");
+titleDiv.textContent = q.question;
 
 
-//   element.addEventListener('click', function(){
-//     if (q.correctAnswer == index){
-//       console.log('Correct!')
-//     }
-// else {
-//   console.log('Wrong Answer!')
-// }
-//   })
+//Answers
+let choices = document.querySelectorAll(".choices");
+// choices.textContent = q.choices;
 
-// })
+choices.forEach(function(element, index){
+  element.textContent = q.choices[index]
 
-// }
-// showQuestions(quiz)
+  element.addEventListener('click', function(){
+    if(q.correctAnswer === index){
+      console.log("correct!!!")
+    }
+else {
+  console.log("wrong!!!")
+}
+  })
+})
+
+
+
+}
+showQuestions(quiz)
 
 
 
