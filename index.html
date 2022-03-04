@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,25 +8,46 @@
     <link rel="stylesheet" href="assets/css/style.css" />
     <title>Coding Quiz Challenge</title>
 </head>
+
 <body>
-        <!--Header with score and timer info-->
-        <section class="header">
-                <span id="high_score">View High Scores</a></span>
-                <span id="timer">Timer:</span>
+    <!--Header with score and timer info-->
+    <section class="header">
+        <span id="high_score"></a></span>
+        <span id="countdown"></span>
+    </section>
+
+    <!-- Start Page -->
+    <div class="intro-container">
+        <section id="intro">
+            <h1>Coding Quiz Challenge</h1>
+            <p>Try to answer the following code-related questions within the time limit.<br>Keep in mind that incorrect
+                answers will penalize your score/time<br>by ten seconds!</p>
+            
+                <button id="start-btn" class="hide">Start Quiz</button>
+          
+
+            <a href="./highscores.html">
+                <button>View HighScores</button>
+            </a>
         </section>
+    </div>
 
-        <!--Start Page-->
-        <div class="intro-container"style="display:block">       
-            <section class="intro">
-                <h1>Coding Quiz Challenge</h1>
-                <p>Try to answer the following code-related questions within the time limit.<br>Keep in mind that incorrect answers will penalize your score/time<br>by ten seconds!</p>
-                <button id="start-btn">Start Quiz</button>
-            </section>
-        </div>
 
-       <!--Quiz Questions-->
-       <section class="quiz-container">
-            <div class="question-1" style="display:none" data-id="0">
+    <!--Quiz Questions-->
+    <section class="quiz-container">
+
+        <div id="title"></div>
+        <ul>
+            <button class="choices"></button>
+            <button class="choices"></button>
+            <button class="choices"></button>
+            <button class="choices"></button>
+        </ul>
+
+        <div id="answAlert"></div>
+
+
+        <!-- <div class="question-1" style="display:none" data-id="0">
                     <h2>How can you get the type of arguments passed to a function?</h2>
                     <div class="answer_container">
                         <button id="answer-btn" onclick="questionTwo()" data-id="1">Using typeof operator</button>
@@ -76,12 +98,12 @@
                         <button id="answer-btn" onclick="gameOver()" data-id="0">-</button>
                         <button id="answer-btn" onclick="gameOver()" data-id="0">%</button>
                     </div>
-            </div>
-        </section>
+            </div> -->
+    </section>
 
-        <!--End game-->
-        
-            <div class="endgame"style="display:none">       
+    <!--End game-->
+
+    <!-- <div class="endgame"style="display:none">       
                     <h1>Coding Quiz Challenge</h1>
                     <p>GAME OVER!</p>
                     <div class="score_box">
@@ -94,9 +116,10 @@
                     <button id="end-btn" onclick="questionOne()">Play Again?</button>
                 </section>
             </div>
-       
-    
-    
-        <script src="assets/js/script.js"></script>
-    </body>
+        -->
+
+
+    <script src="assets/js/script.js"></script>
+</body>
+
 </html>

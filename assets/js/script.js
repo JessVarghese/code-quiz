@@ -1,116 +1,108 @@
-var startButton = document.getElementById("start-btn");
-var countDown = document.getElementById("timer");
-// var qTwo = document.getElementById("answer-1");
-// var qThree = document.getElementById("answer-2");
-// var qFour = document.getElementById("answer-3");
-// var qFive = document.getElementById("answer-4");
-var results = document.getElementById("endgame")
+
+//Countdown
+var timerEl = document.getElementById("countdown");
+
+//Start Button
+let btn = document.getElementById("start-btn");
+
+//trigger the start button to start the timer
+btn.addEventListener("click", countdown);
+
+
+//Quiz questions array
+let quiz = [
+  {
+    question: "How can you get the type of arguments passed to a function?",
+    choices: [
+      "Using typeof operator",
+      "Using getType function",
+      "Both of the above",
+      "None of the above",
+    ],
+    correctAnswer: 0,
+  },
+  {
+    question: "Which of the following is correct about callbacks?",
+    choices: [
+      "A callback is a plain JavaScript function passed to some method as an argument or option.",
+      "Some callbacks are just events, called to give the user a chance to react when a certain state is triggered.",
+      "Both of the above",
+      "None of the above",
+    ],
+    correctAnswer: 2,
+  },
+];
 
 
 
-var dataId = document.querySelectorAll("button[data-id]");
-var answerBtn = document.querySelectorAll("answer-btn");
+// Timer that counts down from 60sec
+function countdown() {
+  var timeLeft = 60;
 
-var endGame = document.getElementsByClassName("endgame");
-
-startButton.addEventListener("click", startTimer);
-startButton.addEventListener("click", questionOne);
-
-
-
-//Function for when the user clicks the button to start the quiz
-
-
-let time =60;
-let timerMinutes = time * 60;
-let timer = timerMinutes /60;
-
-function startTimer() {
-  startButton
-  let timer = setInterval(() => {
-    countDown.innerHTML = "Timer: " + time;
-    time--;
-    if (time<= -1) {
-      clearInterval(timer);
-  }
-    
-  }, 600)
-
-};
-
-function SaveTime() {
-  localStorage.setItem("timer")
+  // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
+  var timeInterval = setInterval(function () {
+    // As long as the `timeLeft` is greater than 1
+    if (timeLeft > 1) {
+      // Set the `textContent` of `timerEl` to show the remaining seconds
+      timerEl.textContent = timeLeft + " seconds remaining";
+      // Decrement `timeLeft` by 1
+      timeLeft--;
+    } else if (timeLeft === 1) {
+      // When `timeLeft` is equal to 1, rename to 'second' instead of 'seconds'
+      timerEl.textContent = timeLeft + " second remaining";
+      timeLeft--;
+    } else {
+      // Once `timeLeft` gets to 0, set `timerEl` to an empty string
+      timerEl.textContent = "Game Over";
+      // Use `clearInterval()` to stop the timer
+      clearInterval(timeInterval);
+    }
+  }, 1000);
 }
 
-function questionOne() {
-    document.querySelector(".question-1").style.display="block"
-    document.querySelector(".intro-container").style.display="none"
-    document.querySelector(".endgame").style.display="none"
+
+
+// function startGame() {
+
+// //Quiz Container
+// document.getElementsByClassName("quiz-container").style.display="block"
+
+
+// //intro container
+// document.getElementsByClassName('intro-container').style.display="none"
+
+
+// }
+
+
+// function showQuestions(q) {
  
-  
-  }; 
+// //Questions
+// let titleDiv = document.getElementById("title");
+
+// titleDiv.textContent = q.question;
+
+// //Answers
+// let choices = document.querySelectorAll(".choices");
+// console.log(choices);
+
+// choices.forEach(function(element, index){
+//   element.textContent= q.choices[index];
 
 
-function questionTwo() {
-  
-  document.querySelector(".question-2").style.display="block"
-  document.querySelector(".question-1").style.display="none"
-  
-  var element = document.getElementById("answer-btn");
- var dataId = element.getAttribute('data-id');
- console.log(dataId);
+//   element.addEventListener('click', function(){
+//     if (q.correctAnswer == index){
+//       console.log('Correct!')
+//     }
+// else {
+//   console.log('Wrong Answer!')
+// }
+//   })
 
-  if (document.querySelector('.data-id') == 0) {
-    time -= 10;
-    console.log(time);
-   document.getElementById("data-id").innerHTML = "Timer: " + time;
-  }
+// })
 
-  };
+// }
+// showQuestions(quiz)
 
-
-
-function questionThree() {
-  
-  document.querySelector(".question-3").style.display="block"
-  document.querySelector(".question-2").style.display="none"
-};
-
-
-
-function questionFour() {
-  
-  document.querySelector(".question-4").style.display="block"
-  document.querySelector(".question-3").style.display="none"
-};
-
-
-
-function questionFive() {
-  
-  document.querySelector(".question-5").style.display="block"
-  document.querySelector(".question-4").style.display="none"
-
-
-};
-
-function gameOver() {
-  document.querySelector(".endgame").style.display="block"
-  document.querySelector(".question-5").style.display="none"
-
-  
-
-  
-};
-
-
-;
-
-
-
-// 1. I want to setup a page that allows the user to start the quiz and prompt the first of 5 quiz questions that starts the timer.
-// 1.	When a user answers each question they will be alerted if the answer is correct or not. Correct points will add points while incorrect answers will reduce the timer by 10 secs.
-// 2.	When the player completes the quiz they are prompted with adding their name to the scoreboard and seeing a list of high scores.
-// 3.	The player can click on “view high scores“to see how they compare to other players
 
 
