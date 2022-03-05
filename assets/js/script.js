@@ -14,6 +14,9 @@ let btn = document.getElementById("start-btn");
 btn.addEventListener("click", countdown);
 
 
+btn.addEventListener('click', startGame)
+
+
 //Quiz questions array
 let quiz = 
   {
@@ -59,10 +62,23 @@ function countdown() {
 
 function startGame() {
 
+  document.querySelector(".intro-container").style.display="none"
+
+  document.querySelector(".quiz-container").style.display="block"
+
+  showQuestions
 }
 
 
 function showQuestions(q) {
+
+  
+
+  for (var i = 0; i < quiz.length; i++) {
+    console.log(quiz[i]);
+
+  }
+  let answerAlert = document.getElementById('answAlert')
  
 //Questions
 let titleDiv = document.getElementById("title");
@@ -78,9 +94,12 @@ choices.forEach(function(element, index){
 
   element.addEventListener('click', function(){
     if(q.correctAnswer === index){
+      answerAlert.textContent = 'Correct Answer!'
       console.log("correct!!!")
     }
 else {
+
+  answerAlert.textContent = 'Wrong Answer!'
   console.log("wrong!!!")
 }
   })
@@ -93,3 +112,9 @@ showQuestions(quiz)
 
 
 
+//Score function
+
+function highScore() {
+  let score = document.getElementById('high_score')
+  score.textContent = 'Score' + timeLeft
+}
