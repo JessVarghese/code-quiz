@@ -1,8 +1,6 @@
-let intro = document.querySelectorAll('intro-container');
+let intro = document.querySelectorAll("intro-container");
 
-let quizContainerEl = document.querySelectorAll('quiz-container');
-
-
+let quizContainerEl = document.querySelectorAll("quiz-container");
 
 //Countdown
 var timerEl = document.getElementById("countdown");
@@ -13,12 +11,13 @@ let btn = document.getElementById("start-btn");
 //trigger the start button to start the timer
 btn.addEventListener("click", countdown);
 
+//trigger start of qame/questions
+btn.addEventListener("click", startGame);
 
-btn.addEventListener('click', startGame)
 
 
 //Quiz questions array
-let quiz = 
+let quiz = [
   {
     question: "How can you get the type of arguments passed to a function?",
     choices: [
@@ -28,10 +27,28 @@ let quiz =
       "None of the above",
     ],
     correctAnswer: 0,
-  };
-
-
-
+  },
+  {
+    question: "Which of the following is correct about callbacks?",
+    choices: [
+      "A callback is a plain JavaScript function passed to some method as an argument or option.",
+      "Some callbacks are just events, called to give the user a chance to react when a certain state is triggered.",
+      "Both of the above",
+      "None of the above",
+    ],
+    correctAnswer: 2,
+  },
+  {
+    question: "Which built-in method returns the calling string value converted to lower case?",
+    choices: [
+      'toLowerCase()',
+      'toLower()',
+      'changeCase(case)',
+      'None of the above'
+    ],
+    correctAnswer: 0,
+  },
+];
 
 // Timer that counts down from 60sec
 function countdown() {
@@ -60,61 +77,89 @@ function countdown() {
 
 
 
+//START GAME
+
 function startGame() {
+  //hides the intro container
+  document.querySelector(".intro-container").style.display = "none";
 
-  document.querySelector(".intro-container").style.display="none"
+  //displays the first question
+  document.querySelector(".quiz-container").style.display = "block";
 
-  document.querySelector(".quiz-container").style.display="block"
-
-  showQuestions
+  showQuestions();
 }
 
 
-function showQuestions(q) {
 
-  
+//Function to trigger question array
+function showQuestions(quiz) {
+  //iterate through each question
 
   for (var i = 0; i < quiz.length; i++) {
-    console.log(quiz[i]);
+    //Questions
+    let titleDiv = document.getElementById("title");
+    titleDiv.textContent = quiz[i].question;
+ let choices = document.querySelectorAll(".choices");
+    // choices.textContent = quiz[i].choices;
+   
 
+    choices.forEach(function (element, index) {
+      element.textContent = choices[i];
+
+       // Answers
+   
+
+    // let answBtn = document.querySelectorAll('#answBtn')
+    let answerAlert = document.getElementById("answAlert");
+
+      element.addEventListener("click", function () {
+        if (quiz.correctAnswer === index) {
+          answerAlert.textContent = "Correct Answer!";
+          console.log("correct!!!");
+        } else {
+          answerAlert.textContent = "Wrong Answer!";
+          console.log("wrong!!!");
+        }
+      });
+    });
   }
-  let answerAlert = document.getElementById('answAlert')
- 
-//Questions
-let titleDiv = document.getElementById("title");
-titleDiv.textContent = q.question;
-
-
-//Answers
-let choices = document.querySelectorAll(".choices");
-// choices.textContent = q.choices;
-
-choices.forEach(function(element, index){
-  element.textContent = q.choices[index]
-
-  element.addEventListener('click', function(){
-    if(q.correctAnswer === index){
-      answerAlert.textContent = 'Correct Answer!'
-      console.log("correct!!!")
-    }
-else {
-
-  answerAlert.textContent = 'Wrong Answer!'
-  console.log("wrong!!!")
 }
-  })
-})
+showQuestions(quiz);
 
 
-
-}
-showQuestions(quiz)
 
 
 
 //Score function
 
-function highScore() {
-  let score = document.getElementById('high_score')
-  score.textContent = 'Score' + timeLeft
-}
+// function highScore() {
+
+ let submitBtn= document.getElementById('submitBtn')
+
+  submitBtn.addEventListener('click', function(event) {
+    event.preventDefault();
+
+
+    let userName = document.getElementById('#first-name')
+  
+    var user = firstNameInput.value.trim()
+      
+  // let score = document.getElementById("high_score");
+  // score.textContent = "Score" + timeLeft;
+
+  
+// set new submission to local storage 
+localStorage.setItem("user", JSON.stringify(user));
+
+
+// added this in
+
+userName.innerHTML = '<h4>'+ localStorage.getItem("user", JSON.stringify(user)) + '</h4>'
+  
+
+
+  })
+  
+
+  
+// }
